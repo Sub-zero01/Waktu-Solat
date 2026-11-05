@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Inarah - My Reminders</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Extra CSS you can add to style.css for the generated cards */
+        .reminder-card {
+            background-color: #ffffff;
+            border-left: 5px solid #007BFF;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .reminder-actions button {
+            margin-right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main class="content-area">
+        
+        <section class="controls-section card">
+            <h2>Add Activity Reminder</h2>
+            <form id="reminderForm">
+                <input type="hidden" id="reminderId">
+                <div class="input-group">
+                    <label for="activityName">Activity Description:</label>
+                    <input type="text" id="activityName" placeholder="e.g., Attend Kuliah Maghrib">
+                </div>
+                <div class="input-group">
+                    <label for="reminderDate">Date:</label>
+                    <input type="date" id="reminderDate">
+                </div>
+                <div class="input-group">
+                    <label for="prayerSelect">Related Prayer Time:</label>
+                    <select id="prayerSelect">
+                        <option value="Subuh">Subuh</option>
+                        <option value="Zohor">Zohor</option>
+                        <option value="Asar">Asar</option>
+                        <option value="Maghrib">Maghrib</option>
+                        <option value="Isyak">Isyak</option>
+                    </select>
+                </div>
+                <button type="submit" class="action-button" id="saveBtn">Save Reminder</button>
+            </form>
+        </section>
+
+        <!-- CRUD Read Display Area (Task 5) -->
+        <section class="reminders-display card">
+            <h3>My Saved Reminders</h3>
+            
+            <div id="remindersList">
+                
+                <!-- Injected Card 1 -->
+                <div class="reminder-card">
+                    <h4>Attend Kuliah Maghrib</h4>
+                    <p><strong>Date:</strong> 2026-10-28 | <strong>Prayer:</strong> Maghrib</p>
+                    <div class="reminder-actions" style="margin-top: 10px;">
+                        <button onclick="editReminder(1698451200000)">Edit</button>
+                        <button onclick="deleteReminder(1698451200000)" style="color: red;">Delete</button>
+                    </div>
+                </div>
+
+                <!-- Injected Card 2 -->
+                <div class="reminder-card">
+                    <h4>Read Surah Al-Kahf</h4>
+                    <p><strong>Date:</strong> 2026-10-30 | <strong>Prayer:</strong> Asar</p>
+                    <div class="reminder-actions" style="margin-top: 10px;">
+                        <button onclick="editReminder(1698624000000)">Edit</button>
+                        <button onclick="deleteReminder(1698624000000)" style="color: red;">Delete</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <nav class="bottom-bar">
+        <a href="indexexam.html" class="nav-button">Waktu Solat</a>
+        <a href="remindersexam.html" class="nav-button active">My Reminders</a>
+    </nav>
+</body>
+</html>

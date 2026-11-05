@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Inarah - My Reminders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="content-area">
+        <!-- Form Section for Create / Update (Task 5 & 8) -->
+        <section class="controls-section">
+            <h2 id="formTitle">Add New Reminder</h2>
+            <p style="color: #666; font-size: 14px; margin-bottom: 15px;">
+                Create custom activities linked to specific dates and prayer times.
+            </p>
+
+            <!-- Status Feedback Message Banner -->
+            <div id="statusMessage" style="display: none; padding: 10px; margin-bottom: 15px; border-radius: 5px;"></div>
+
+            <form id="reminderForm">
+                <input type="hidden" id="editIndex" value="-1">
+
+                <div class="input-group">
+                    <label for="taskActivity">Activity / Task Description:</label>
+                    <input type="text" id="taskActivity" placeholder="e.g., Read Surah Al-Kahf or Attend Kuliah">
+                </div>
+
+                <div class="input-group">
+                    <label for="taskDate">Target Date:</label>
+                    <input type="date" id="taskDate">
+                </div>
+
+                <div class="input-group">
+                    <label for="taskPrayer">Associated Prayer Time:</label>
+                    <select id="taskPrayer">
+                        <option value="Subuh">Subuh</option>
+                        <option value="Zohor">Zohor</option>
+                        <option value="Asar">Asar</option>
+                        <option value="Maghrib">Maghrib</option>
+                        <option value="Isyak">Isyak</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="saveBtn" class="action-button">Save Reminder</button>
+                <button type="button" id="cancelBtn" class="action-button" style="display: none; background-color: #6c757d; margin-top: 8px;">Cancel Edit</button>
+            </form>
+        </section>
+
+        <!-- Saved Records Table Display (Task 5 & 7) -->
+        <section class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center;"></div>
+                <h3>Saved Reminders List</h3>
+                <button id="clearAllBtn" style="background-color: #6c757d; color: white; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px;">Clear All</button>
+            </div>
+            
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Date</th>
+                        <th>Prayer</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="reminderTableBody">
+                    <!-- Injected dynamically by reminders.js -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- BOTTOM BAR NAVIGATION (Task 8: Consistent Multi-page Navigation) -->
+    <nav class="bottom-bar">
+        <a href="index.html" class="nav-button">Waktu Solat</a>
+        <a href="reminders.html" class="nav-button active">My Reminders</a>
+    </nav>
+
+    <script src="reminders.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Inarah - Waktu Solat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="content-area">
+        
+        <!-- Controls for User Input (Task 8: GUI Controls & Forms) -->
+        <section class="controls-section">
+            <h2>Waktu Solat Dashboard</h2>
+            <p style="color: #666; font-size: 14px; margin-bottom: 15px;">
+                Select your location and date below to fetch official JAKIM prayer times.
+            </p>
+            
+            <div class="input-group">
+                <label for="zoneSelect">Location (JAKIM Zone):</label>
+                <select id="zoneSelect">
+                    <!-- Populated dynamically by dropdown.js -->
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="dateSelect">Select Date:</label>
+                <input type="date" id="dateSelect">
+            </div>
+
+            <button id="fetchTimesBtn" class="action-button">Get Prayer Times</button>
+        </section>
+
+        <!-- Error Handling Feedback Banner (Task 6) -->
+        <div id="errorMessage" style="color: #721c24; background-color: #f8d7da; padding: 10px; border-radius: 5px; margin-bottom: 15px; display: none;"></div>
+
+        <!-- Time Remaining Countdown Card (Task 4) -->
+        <section id="countdownSection" class="card" style="display: none;">
+            <h3>Time Until Next Prayer:</h3>
+            <h1 id="countdownDisplay">--:--</h1>
+            <p id="nextPrayerLabel">Waiting for data...</p>
+        </section>
+
+        <!-- Personal Activity Suggestion Card (Task 3 & 5) -->
+        <div class="card" id="suggestionSection" style="display: none; background-color: #fff8e1; border-left: 4px solid #ffc107;">
+            <h3 style="margin-top: 0; color: #856404;">Activity Suggestion</h3>
+            <div id="suggestionText"></div>
+            
+            <!-- Quick Guide Toggle Button -->
+            <button id="toggleGuideBtn" style="margin-top: 10px; background-color: #856404; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 13px;">
+                📖 How to Perform
+            </button>
+
+            <!-- Collapsible Instruction Guide -->
+            <div id="guideDetails" style="display: none; margin-top: 10px; padding: 10px; background-color: #ffffff; border: 1px solid #ffeeba; border-radius: 4px; font-size: 13px; color: #333;">
+                <!-- Dynamic instruction steps will load here -->
+            </div>
+        </div>
+
+        <!-- API Prayer Times Table Display (Task 2 & 7) -->
+        <section id="prayerListSection" class="card" style="display: none;">
+            <h3>Today's Waktu Solat</h3>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Waktu (Prayer)</th>
+                        <th>Masa (Time)</th>
+                    </tr>
+                </thead>
+                <tbody id="prayerTableBody">
+                    <!-- Injected dynamically by index.js -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- BOTTOM BAR NAVIGATION (Task 8: Multi-page Navigation) -->
+    <nav class="bottom-bar">
+        <a href="index.html" class="nav-button active">Waktu Solat</a>
+        <a href="reminders.html" class="nav-button">My Reminders</a>
+    </nav>
+
+    <!-- Script Execution Order -->
+    <script src="dropdown.js"></script>
+    <script src="suggestion.js"></script>
+    <script src="countdown.js"></script>
+    <script src="index.js"></script>
+    
+
+</body>
+</html>

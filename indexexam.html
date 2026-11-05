@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Inarah - Waktu Solat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="content-area">
+        
+        <section class="controls-section">
+            <h2>Waktu Solat Dashboard</h2>
+            <div class="input-group">
+                <label for="dateSelect">Date:</label>
+                <input type="date" id="dateSelect" value="2026-10-28">
+            </div>
+            <button id="fetchTimesBtn" class="action-button">Get Prayer Times</button>
+        </section>
+
+        <!-- Meaningful Calculation Output (Task 4) -->
+        <section id="countdownSection" class="card">
+            <h3>Time Until Next Prayer:</h3>
+            <h1 id="countdownDisplay">02 Hours 15 Minutes</h1>
+            <p id="nextPrayerLabel">Until Asar</p>
+        </section>
+
+        <!-- Suggestion Logic Output (Task 3) -->
+        <section id="suggestionSection" class="card">
+            <h3>Activity Suggestion</h3>
+            <p id="suggestionText">It is afternoon. Prepare for your upcoming Asar prayer and consider reading a few pages of the Quran.</p>
+        </section>
+
+        <!-- API Prayer Times Output (Task 2) -->
+        <section id="prayerListSection" class="card">
+            <h3>Today's Waktu Solat</h3>
+            <ul id="prayerTimesList">
+                <li><strong>Subuh:</strong> 05:42</li>
+                <li><strong>Zohor:</strong> 13:05</li>
+                <li><strong>Asar:</strong> 16:21</li>
+                <li><strong>Maghrib:</strong> 19:02</li>
+                <li><strong>Isyak:</strong> 20:13</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <nav class="bottom-bar">
+        <a href="indexexam.html" class="nav-button active">Waktu Solat</a>
+        <a href="remindersexam.html" class="nav-button">My Reminders</a>
+    </nav>
+</body>
+</html>
